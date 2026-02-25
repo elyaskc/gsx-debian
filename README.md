@@ -22,7 +22,7 @@
 
 ## Checklist de monitoreo - Que hay que revisar regularmente en un sistema
 
-## Guia de soluciñon de problemas - Que hacer si los procesos usan demasiada CPU (90%)
+## Guia de solución de problemas - Que hacer si los procesos usan demasiada CPU (90%)
 
 ## Baseline de rendimiento - Documentar diferencias entre baseline normal versus baseline anormal
 
