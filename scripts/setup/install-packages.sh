@@ -5,6 +5,7 @@ sudo apt update
 
 PACKAGES=(
    openssh-server
+   unattended-upgrades
 )
 
 echo "Instalando paquetes..."

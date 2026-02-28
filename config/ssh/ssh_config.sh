@@ -31,4 +31,19 @@ else
     exit 1
 fi
 
+echo "Configurando actualizaciones de seguridad automaticas..."
+sudo systemctl enable unattended-upgrades
+sudo systemctl start unattended-upgrades
+
+# Configurar unattended-upgrades
+sudo dpkg-reconfigure -f noninteractive unattended-upgrades
+
+echo "Verificando unattended-upgrades..."
+if systemctl is-active --quiet unattended-upgrades; then
+    echo "[OK] Actualizacion de seguridad automatica habilitada"
+else
+    echo "[FAIL] Actualizacion de seguridad automatica inhabilitada"
+    exit 1
+fi
+
 echo "==> Done."
