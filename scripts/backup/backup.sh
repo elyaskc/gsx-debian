@@ -1,30 +1,24 @@
 #!/bin/bash
 
-BACKUP_DIR="/var/backup/daily"
+BACKUP_DIR="/var/backup"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 BACKUP_FILE="$BACKUP_DIR/backup_$TIMESTAMP.tar.gz"
 
-# Directorios para hacerle backup
+# Directorios para hacerl el backup
 SOURCES=(
-    /etc/ssh
-    /opt/admin
-    /var/log/admin
+    /etc/configs
+    /opt/scripts
 )
 
-echo "Iniciando backup..."
-echo "El backup se ha guardado en: $BACKUP_FILE"
-
-# -p preserves file attributes and permissions
-# -z compresses with gzip
+# Creamos la  copia comprimida y manteniendo permisos
 sudo tar -czpf "$BACKUP_FILE" "${SOURCES[@]}"
 
-echo "Verificando backup..."
+# Comprobamos que existe el backup creado e imprimimos su nombre y tamaño
 if [ -f "$BACKUP_FILE" ]; then
     SIZE=$(du -sh "$BACKUP_FILE" | cut -f1)
-    echo "[OK] Backup creado: $BACKUP_FILE ($SIZE)"
+    echo "Backup creado: $BACKUP_FILE ($SIZE)"
 else
-    echo "[FAIL] El archivo backup no se encontró"
+    echo "El archivo backup no se ha podido crear correctamente."
     exit 1
 fi
 
-echo "Hecho."
