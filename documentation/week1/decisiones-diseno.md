@@ -44,10 +44,15 @@ El orden de ejecución de los scripts es:
 4. verify.sh             # Verificar que todo está correcto
 ```
 
-## 4. Estructura de Directorios — ¿Por qué /opt/admin?
+## 4. Estructura de Directorios
 
-Hemos elegido `/opt/admin` como directorio base de administración por las siguientes razones:
+La estructura de directorios que hemos elegido se divide en:
+- `/opt` como directorio para scripts
+- `/etc` para configuraciones
+- `/var` para el backup
+- `/documentation` para la documentación semanal de la práctica
 
+Esta estructura se debe a:
 - **Convención Linux** — `/opt` está reservado para software adicional no gestionado por el gestor de paquetes
 - **Separación clara** — mantiene los scripts y configuraciones de administración separados del sistema base
 - **Permisos** — solo el usuario `gsx` tiene acceso (`chmod 750`), siguiendo el principio de mínimo privilegio
@@ -76,3 +81,4 @@ Solo en el servidor:
 Regla general:
 - Si el archivo contiene **secretos** o **datos sensibles**, no va en Git.
 - Si el archivo permite **reproducir o entender** la infraestructura, va en Git.
+
