@@ -5,19 +5,18 @@
 El servidor SSH debe estar instalado y corriendo en la VM. 
 Para verificarlo, en la terminal bash ejecutamos `systemctl status ssh`
 
-Si no esta instalado, hay que ejecutar el script install-packages en el directorio Prac1/gsx-debian/scripts/install-packages.sh
+Si no esta instalado, hay que ejecutar el script install_SSH.sh en el directorio gsx-debian/scripts/setup/
 
-Después ejecutamos el script **ssh_config.sh** en el directorio Prac1/gsx-debian/config/ssh/ssh_config.sh y al ejecutarlo ahora el servidor usa el puerto 2222 y se le ha deshabilitado el root login.
-También para verificar que el puerto se ha configurado correctamente podemos ejecutar en la terminal `ssh ss -tlnp | grep ssh`
+Al ejecutar ese script no solamente instala SSH en nuestra máquina sino que también lo configura, cambia el puerto del predeterminado (22) al 2222, y modifica la opción PermitRootLogin de forma que no se permitirá el acceso remoto a root.
 
-Por ultimo hay que habilitar el Port Forwarding de la VM, ya que la IP interna (10.0.2.15) no es accesible directamente desde Windows.
+Finalmente, hay que habilitar el Port Forwarding de la VM, ya que la IP interna no es accesible directamente desde Windows.
 Para hacer esto tenemos que ir a la configuración de VirtualBox y en el apartado red hacer click en la opción de reenvio de puertos y añadir una nueva regla con los campos:
 
 - Name: SSH
 - Protocolo: TCP
 - IP anfitrion: 127.0.0.1
 - Puerto anfitrion: 2222
-- IP invitado: 10.0.2.15
+- IP invitado: (dejar vacío)
 - Puerto invitado: 2222
 
 ###  Paso 1 — Generar Par de Claves SSH (en el servidor)
