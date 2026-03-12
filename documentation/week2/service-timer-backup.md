@@ -7,6 +7,7 @@ Su objetivo es que se cree una copia de seguridad todos los dias a las 00:00.
 Ambos archivos deben estar en la carpeta /etc/systemd/system para poder funcionar correctamente.
 El script validate-timer-backup.sh se encarga de todo lo siguiente de forma idempotente, si algo ya está en su sitio no lo mueve, si ya está activo no lo activa.
 
+
 ### validate-timer-backup.sh
 Esta es una breve descripción de las funciones del script que comprueba que todo esté bien configurado.
 
