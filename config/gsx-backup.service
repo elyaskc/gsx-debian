@@ -1,0 +1,7 @@
+[Unit]
+Description=Crear una copia de seguridad ejecutando el script backup.sh
+
+[Service]
+Type=oneshot
+ExecStart=/opt/scripts/backup.sh
+User=gsx
