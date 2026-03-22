@@ -4,10 +4,10 @@ BACKUP_DIR="/var/backup"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 BACKUP_FILE="$BACKUP_DIR/backup_$TIMESTAMP.tar.gz"
 
-# Directorios para hacerl el backup
+# Directorios para hacerle el backup
 SOURCES=(
-    /etc/configs
-    /opt/scripts
+    /etc/configs/
+    /opt/scripts/
 )
 
 # Creamos la  copia comprimida y manteniendo permisos
