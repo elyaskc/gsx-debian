@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Crear la carpeta base del equipo
-mkdir /home/greendevcorp/
-chgrp -R greendevcorp /home/greendevcorp/
+mkdir -p /home/greendevcorp/
 
 # Crear la carpeta bin y asignarle los permisos minimos a los usuarios
 mkdir -p /home/greendevcorp/bin
@@ -17,3 +16,5 @@ touch /home/greendevcorp/done.log
 chown dev1:greendevcorp /home/greendevcorp/done.log
 chmod 640 /home/greendevcorp/done.log
 
+# Establecer toda la estructura de carpetas al grupo greendevcorp
+chgrp -R greendevcorp /home/greendevcorp/
