@@ -2,7 +2,7 @@
 
 ## De que datos hacer backup
 - el directorio /etc que contiene configuraciones del sistema y tambien nuestras configuraciones para la pràctica (/etc/configs). Este directorio es crucial para restaurar el sistema
-- el directorio /opt/scripts que contiene scripts y configuraciones de la práctica
+- el directorio de trabajo de la práctica /home/gsx/Prac1/gsx-debian
 
 
 ## Backup Full | Incremental | Diferencial

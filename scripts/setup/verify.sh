@@ -54,7 +54,7 @@ for folder in "${folders[@]}"; do
 	if [ ! -d "$folder" ]; then
 		folder_missing=1
 	fi
-fi
+done
 
 if [ $folder_missing -eq 1 ]; then
 	echo "Creando carpetas restantes..."
