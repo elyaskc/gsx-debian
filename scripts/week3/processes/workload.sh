@@ -3,19 +3,22 @@
 LOGFILE="/var/log/admin/workload.log"
 WORKERS=()
 
+#Función para formatear un log
 log(){
    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOGFILE"
 }
 
+#Función para iniciar workers y controlarlos con las diferentes señales para ver el funcionamiento
 start_workers(){
      log "Iniciando 3 workers en segundo plano..."
      for i in 1 2 3; do
-	yes > /dev/null &
+	yes > /dev/null &  #con esta línea simulamos una carga de CPU para probar los limites de recursos
 	WORKERS+=($!)
 	log "El worker $i se ha iniciado con el PID ${WORKERS[-1]}"
      done
 }
 
+#Función para parar los workers
 stop_workers(){
      log "Parando workers de manera graceful (SIGTERM)..."
      for PID in "${WORKERS[@]}"; do
@@ -26,6 +29,7 @@ stop_workers(){
      done
 }
 
+#Función para mostrar el estado de los workers
 status_report(){
      log "Recibido SIGUSR1 - reporte del estado:"
      for PID in "${WORKERS[@]}"; do
@@ -54,7 +58,3 @@ while true; do
     sleep 5
     log "workers ejecutandose: ${#WORKERS[@]}"
 done
-
-
-
-

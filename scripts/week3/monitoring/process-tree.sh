@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Script para mostrar el arbol de procesos de Linux y algunas metricas
 echo "Arbol de procesos:"
 
 if command -v pstree &>/dev/null; then
