@@ -9,7 +9,7 @@
 ### Como diagnosticar fallos si el sistema va lento?
 - Se pueden utilizar los scripts del directorio /week3/monitoring para comprobar consumos
 ### Como nos recuperamos de un backup?
-- ...
+- Recuperamos el último full backup (semanal) y el último incremental backup (diario)
 
 
 # Guía de Trobleshooting
